@@ -1,0 +1,62 @@
+_G.Key = ""
+
+local keys = {
+    "ptmqP0V(XE",
+    "tpmtre0vxE"
+}
+
+local counter = 1 
+local keyCheck 
+for i,v in pairs(keys) do
+    if counter == #keys then
+        --not whitelisted
+        keys = ""
+        game.Players.LocalPlayer:Kick("Not a valid key")
+    else
+        if v == _G.Key then
+            --Whitelisted
+            print("Succesfully Whitelisted")
+            keyCheck = _G.Key
+            keys = ""
+        else'
+            counter = counter +1
+        end
+    end
+end
+
+while true do
+     if _G.Key == keyCheck then
+    -- Not spoofed 
+else
+    game.Players.LocalPLayer:Kick("Do not try and spoof the key")
+end
+    wait()
+end
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Hubby wubby {Roadman Ashura}", "Sentinel")
+
+--MAIN
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Main Scripts")
+
+
+Section:NewButton("Ashura Roadman Job farm", "Job farms", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/vep1032/VepStuff/main/Roadman%20Ashura%20Money%20Farm"))()
+    print("Fired")
+end)
+Section:NewToggle("NoName", "Headless", function(state)
+    if state then
+        print("On")
+    else
+        print("Off")
+    end
+end)
+Section:NewSlider("Speed", "WalkSpeed", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 500
+end)
+
+--Credits
+local Tab = Window:NewTab("Credits")
+local Section = Tab:NewSection("Made by Justin")
+local Section = Tab:NewSection("Discord ShmackedK#8096")
